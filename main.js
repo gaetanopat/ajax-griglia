@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  var table_td = $('#template_quadratini').html();
+  var template_table_td_function = Handlebars.compile(table_td);
+  console.log(table_td);
+  
+  // aggiungo alla tabella le 6 colonne per 6 righe
+  for(var i = 0; i < 6; i++){
+    $('table').append(table_td);
+  }
+
   // quando clicco su un quadratino
   $('tr td').click(function(){
     // prendo il quadratino cliccato
